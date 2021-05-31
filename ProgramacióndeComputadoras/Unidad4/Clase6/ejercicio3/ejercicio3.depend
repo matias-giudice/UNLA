@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1621896029 source:c:\users\pc\desktop\clase6\ejercicio3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
