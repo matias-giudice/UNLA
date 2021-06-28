@@ -49,7 +49,7 @@ int main() {
         }
     }
     printf("\nEl resultado de concatenar las dos primeras letras de las cadenas es: \"%s\".\n\n",
-            strcat(strcat(nuevaCadena[0], nuevaCadena[1]), nuevaCadena[2]));
+    strcat(strcat(nuevaCadena[0], nuevaCadena[1]), nuevaCadena[2]));
     resComparacion = strcmp(cadenas[0], cadenas[1]);
     if (resComparacion ==0) {
         printf("La primera cadena, \"%s\", es igual a la segunda cadena, \"%s\".\n", cadenas[0], cadenas[1]);

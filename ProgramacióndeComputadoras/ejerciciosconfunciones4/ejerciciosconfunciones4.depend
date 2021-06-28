@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1624860399 source:c:\users\pc\desktop\unla\programacióndecomputadoras\ejerciciosconfunciones4\main.c
+1624876733 source:c:\users\pc\desktop\unla\programacióndecomputadoras\ejerciciosconfunciones4\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<math.h>
+	<string.h>
 

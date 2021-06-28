@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-#include<math.h>
+#include <math.h>
+#include <string.h>
 #define cantHor 4
 void mostrarMaxMinVectorTamanioDefinido();
 void mostrarMaxMinPromAltParesVectorTamanioDefinido();
@@ -12,7 +13,6 @@ int cargarTamanio();
 void cargarVectorAleatorio(int v[], int t);
 void mostrarVector(int v[], int t);
 int calcularMedia(int v[], int t);
-void ordenamientoBurbuja(int v[], int t);
 int calcularMediana(int v[], int t);
 float calcularDesvioEstandar(int v[], int t, int media);
 void calcularFrecuencia(int v[], int t, int n);
@@ -44,6 +44,43 @@ int submenuVectoresMatrices(int op, int v[], int t, int matriz[][cantHor], int c
 int cargarRenglones();
 int cargarColumnas();
 void oracion();
+void oracionAtrasHaciaDelante();
+void oracionPalindromo();
+void nombresPersonas();
+void ordenarPalabrasAlfabeticamente();
+void longitudPalabra();
+void concatenarLetrasCadenas();
+void menuMezclado();
+int calcularEdad(int nacimiento, int anioHoy);
+float calcularIndiceDeMasaCorporal(float peso,float altura);
+void dibujarTriangulo(int base, int altura);
+void calcularHipotenusa(float cateto1, float catero2);
+int cantidadDeVecesQueApareceLaLetra(char letra, char oracion[100]);
+int pedirEnteroPorTeclado();
+float pedirFloatPorTeclado();
+int maximoVector(int v[], int t);
+int minimoVector(int v[], int t);
+int cantidadNumerosRepetidosEnElVector(int v[], int t);
+void menuMezcladoDos();
+int esBisiesto(int anio);
+int sonIguales(char nombre1[20], char nombre2[20]);
+int esMayorDeEdad(int anioNacimiento, int anioHoy);
+int esPalindromo(char oracion[100]);
+void menuCompletoVector();
+int numeroAleatorio();
+void mostrarVector(int v[], int t);
+int promedioVector(int v[], int t);
+int posicionMenor(int v[], int t);
+int posicionMayor(int v[], int t);
+void ordenamientoBurbuja(int v[], int t);
+void ordenamientoSeleccion(int v[], int t);
+void ordenamientoInsercion(int v[], int t);
+void ordenarMayorAmenor(int v[], int t);
+void ordenarMenorAmayor(int v[], int t);
+float numeroAleatorioEntre(int min, int max);
+void cargarVectorManualmente(float v[],int t);
+void cargarVectorAleatoriamente(float v[],int t,int min,int max);
+float busquedaSecuencial(float v[],int t, float busco);
 int main(){
     srand(time(0));
     /*mostrarMaxMinVectorTamanioDefinido();
@@ -53,9 +90,17 @@ int main(){
     menuVectores();
     menuMatrices();
     menuMatricesDos();
-    menuVectoresMatrices();*/
-    //ME QUEDE EN CADENAS - CLASE 7 EJERCICIO 2
+    menuVectoresMatrices();
     oracion();
+    oracionAtrasHaciaDelante();
+    oracionPalindromo();
+    nombresPersonas();
+    ordenarPalabrasAlfabeticamente();
+    longitudPalabra();
+    concatenarLetrasCadenas();
+    menuMezclado();
+    menuMezcladoDos();
+    menuCompletoVector();*/
     return 0;
 }
 void mostrarMaxMinVectorTamanioDefinido(){
@@ -236,18 +281,6 @@ int calcularMedia(int v[], int t){
     }
     m = s / t;
     return m;
-}
-void ordenamientoBurbuja(int v[], int t){
-    int i,j,aux;
-    for(i=0; i<t; i++){
-        for(j=0; j<t-1; j++){
-            if(v[j] >= v[j+1]) {
-				int aux = v[j];
-				v[j] = v[j+1];
-				v[j+1] = aux;
-			}
-		}
-	}
 }
 int calcularMediana(int v[], int t){
     int med=0;
@@ -631,4 +664,586 @@ void oracion(){
     printf("\n\nCantidad de vocales ---> %d", cantVoc);
     printf("\n\nCantidad de consonantes ---> %d", cantCon);
     printf("\n");
+}
+void oracionAtrasHaciaDelante(){
+    //Definimos variables
+    int i, posInicial, posFinal, cont;
+    char palabra[20], caracter,aux;
+    //Ingresamos la palabra
+    printf("Ingrese una palabra(agregar un '.' al final de la palabra): \n");
+    scanf("%c",&caracter);
+    i=0;//Inicializamos el contador en 0
+    while(i<25 && caracter!='.'){//Almacenamos la palabra
+        palabra[i] = caracter;
+        i++;
+        scanf("%c",&caracter);
+    }
+    posInicial=0;//Inicializamos la posicion inicial en 0
+    posFinal=i-1;//Inicializamos la posicion final restandole 1 al contador
+    //Verificamos que la posicion inicial sea menor que la posicion final
+    while(posInicial<posFinal){
+        aux = palabra[posInicial];
+        palabra[posInicial] = palabra[posFinal];
+        palabra[posFinal] = aux;
+        posInicial++; //sumando unidad
+        posFinal--;   //restando unidad
+    }
+    printf("\n");
+    for(cont=0; cont<i; cont++){
+        printf("%c",palabra[cont]);
+    }
+    printf("\n");
+}
+void oracionPalindromo(){
+    //Definimos variables
+    int i, posInicial, posFinal;
+    char palabra[20], caracter;
+    //Ingresamos la palabra
+    printf("Ingrese una palabra(agregar un '.' al final de la palabra): \n");
+    scanf("%c",&caracter);
+    i=0;//Inicializamos el contador en 0
+    while(i<25 && caracter!='.'){//Almacenamos la palabra
+        palabra[i] = caracter;
+        i++;
+        scanf("%c",&caracter);
+    }
+    posInicial=0;//Inicializamos la posicion inicial en 0
+    posFinal=i-1;//Inicializamos la posicion final restandole 1 al contador
+    //Verificamos que la posicion inicial sea menor que la posicion final y tambien las comparamos
+    while(posInicial<posFinal && palabra[posInicial]==palabra[posFinal]){
+        posInicial++; //sumando unidad
+        posFinal--;   //restando unidad
+    }
+    //Si la posicion inicial es mayor o igual que la posicion final va a mostrar que es palindromo sino se cumple muestra que no es palindromo
+    if(posInicial>=posFinal){
+        printf("La palabra es palindromo. \n");
+    }else{
+        printf("La palabra no es palindromo. \n");
+    }
+}
+void nombresPersonas(){
+    //Defnimos variables
+    char nombre1[20], nombre2[20];
+    int i;
+    //Ingresamos valores
+    printf("Ingrese un nombre: \n");
+    fflush(stdin);
+    gets(nombre1);
+    printf("Ingrese otro nombre: \n");
+    fflush(stdin);
+    gets(nombre2);
+    int nombres = strcmp(nombre1,nombre2);
+    //Verificamos que los nombres sean iguales o no(en ese caso se juntan ambos en uno)
+    if(nombres == 0){
+        printf("\nLos nombres son iguales.\n");
+    }else{
+        printf("Tercer nombre componiendo ambos: \n");
+        printf("%s\n",strcat(nombre1,nombre2));
+    }
+}
+void ordenarPalabrasAlfabeticamente(){
+    int i,j; //Ciclos que ayudaran a ordenar el arreglo
+	char palabra[5][10]; //Arreglo que guardara las palabras
+	char aux[20]; //Vector auxiliar que guardara palabras temporalmente
+
+	//Ciclo en el que solicitamos las palabras a ingresar
+	for(i=0; i<2; i++){
+		printf("Ingresa una palabra: ");
+		scanf("%s",&palabra[i]);
+	}
+
+	for(i=1; i<2; i++){ //Ciclo que se repetirá 5 veces para ordenar cada nombre
+        for(j=0; j<2-i; j++){//Ciclo que ordenara un nombre, se va restando pues en cada vuelta queda ordenado el ultimo nombre
+            if(strcmp(palabra[j],palabra[j+1])>0){ //Si el nombre actual es mayor al siguiente nombre...
+                strcpy(aux,palabra[j]); //Guardamos el nombre actual en Aux
+        		strcpy(palabra[j],palabra[j+1]); //Pasamos el nombre siguiente al actual
+        		strcpy(palabra[j+1],aux); //Pasamos el Aux al siguiente
+    	    }
+        }
+    }
+	printf("\n \n---- PALABRAS ORDENADOS ---- \n");
+	//Mostramos los nombres ordenados
+	for(i=0; i<2; i++){
+		printf("%s \n",palabra[i]);
+	}
+}
+void longitudPalabra(){
+    char cadenaUno[20] = " ";
+    char cadenaDos[20] = " ";
+    char cadenaTres[20] = " ";
+    printf("ingrese una palabra: ");
+    fflush(stdin);
+    scanf("%s",cadenaUno);
+    printf("ingrese otra palabra: ");
+    fflush(stdin);
+    scanf("%s",cadenaDos);
+    printf("ingrese otra palabra: ");
+    fflush(stdin);
+    scanf("%s",cadenaTres);
+    printf("La longitud de %s es de: %d\n",cadenaUno,strlen(cadenaUno));
+    printf("La longitud de %s es de: %d\n",cadenaDos,strlen(cadenaDos));
+    printf("La longitud de %s es de: %d\n",cadenaTres,strlen(cadenaTres));
+}
+void concatenarLetrasCadenas(){
+    typedef char TipoCadenas[50]; //
+    TipoCadenas cadenas[3];
+    TipoCadenas nuevaCadena[3];
+    int i = 0;
+    int j = 0;
+    int resComparacion = 0;
+    for(i = 0; i < 3; i++){ // Se piden tres cadenas de texto
+        printf("Introduzca una cadena de texto: ");
+        gets(cadenas[i]);
+    }
+    for(i=0; i<3; i++){ // Se recuperan las dos primeras letras de cada cadena de texto y se guardan en una variable.
+        for(j=0; j<3; j++){
+            if(j==2){
+                nuevaCadena[i][j] = '\0'; // Después de recuperar las dos letras, introducimos el final de cadena.
+            }else{
+                nuevaCadena[i][j] = cadenas[i][j];
+            }
+        }
+    }
+    printf("\nEl resultado de concatenar las dos primeras letras de las cadenas es: \"%s\".\n\n",
+    strcat(strcat(nuevaCadena[0], nuevaCadena[1]), nuevaCadena[2]));
+    resComparacion = strcmp(cadenas[0], cadenas[1]);
+    if (resComparacion ==0) {
+        printf("La primera cadena, \"%s\", es igual a la segunda cadena, \"%s\".\n", cadenas[0], cadenas[1]);
+    } else {
+        printf("La primera cadena, \"%s\", no es igual a la segunda cadena, \"%s\".\n", cadenas[0], cadenas[1]);
+    }
+}
+void menuMezclado(){
+    int tamanio=4;
+    int vector[tamanio];
+    int nacimiento,anioHoy,edadActual;
+    float peso,altura,imc;
+    printf("\n---------------------------------\n");
+    printf("Ingrese anio de nacimiento: \n");
+    scanf("%d",&nacimiento);
+    printf("Ingrese el anio actual: \n");
+    scanf("%d",&anioHoy);
+    edadActual = calcularEdad(nacimiento,anioHoy);
+    printf("Edad actual: %d\n",edadActual);
+    printf("\n---------------------------------\n");
+    printf("Ingrese peso: \n");
+    scanf("%f",&peso);
+    printf("Ingrese altura: \n");
+    scanf("%f",&altura);
+    imc = calcularIndiceDeMasaCorporal(peso,altura);
+    printf("Indice De Masa Corporal: %.2f\n",imc);
+    printf("\n---------------------------------\n");
+    dibujarTriangulo(4,8);
+    printf("\n---------------------------------\n");
+    calcularHipotenusa(3,4);
+    printf("\n---------------------------------\n");
+    char oracion[100]=" ";
+    int letra;
+    int res = 0;
+    printf("\nEscriba una oracion: \n");
+    fflush(stdin);
+    gets(oracion);
+    printf("Escribe la letra que quieres contar:\n");
+    scanf("%c",&letra);
+    res = cantidadDeVecesQueApareceLaLetra(letra, oracion);
+    printf("La letra %c aparece %d veces.\n", letra,res);
+    printf("\n---------------------------------\n");
+    pedirEnteroPorTeclado();
+    printf("\n---------------------------------\n");
+    pedirFloatPorTeclado();
+    printf("\n---------------------------------\n");
+    cargarVector(vector,tamanio);
+    printf("\n---------------------------------\n");
+    mostrarVector(vector,tamanio);
+    printf("\n---------------------------------\n");
+    maximoVector(vector,tamanio);
+    printf("\n---------------------------------\n");
+    minimoVector(vector,tamanio);
+    printf("\n---------------------------------\n");
+    cantidadNumerosRepetidosEnElVector(vector,tamanio);
+    printf("\n---------------------------------\n");
+}
+int calcularEdad(int nacimiento, int anioHoy){
+    int edad = (anioHoy - nacimiento);
+    return edad;
+}
+float calcularIndiceDeMasaCorporal(float peso,float altura){
+    int calImc = peso / (altura * altura);
+    return calImc;
+}
+void dibujarTriangulo(int base, int altura){
+    int area = (base * altura) / 2;
+    printf("Area: %d\n",area);
+}
+void calcularHipotenusa(float cateto1, float cateto2){
+    int hipotenusa = (cateto1*cateto1) + (cateto2*cateto2);
+    printf("Hipotenusa: %d\n",hipotenusa);
+}
+int cantidadDeVecesQueApareceLaLetra(char letra, char oracion[100]){
+    char abecedario[53]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    int cantLet=0;
+    int i=0,j;
+    while(oracion[i]!='\0'){
+        for (j=0; j<53; j++){
+            if (oracion[i]==abecedario[j] && letra==abecedario[j]){
+                cantLet = cantLet + 1;
+            }
+        }
+        i=i+1;
+    }
+    return cantLet;
+}
+int pedirEnteroPorTeclado(){
+    int n;
+    printf("Ingrese un numero: \n");
+    scanf("%d",&n);
+}
+float pedirFloatPorTeclado(){
+    float n;
+    printf("Ingrese un numero: \n");
+    scanf("%f",&n);
+}
+/*int maximoVector(int v[], int t){
+    int i,j;
+    for(i=0; i<t; i++){
+        printf("Ingrese un valor para el vector: \n");
+        scanf("%d",&v[i]);
+    }
+    printf("Vector: \n");
+    for(i=0; i<t; i++){
+        printf("Pos[%d] = %d \n",i,v[i]);
+    }
+    int max = v[0];
+    int min = max;
+    for(j=0; j<t; j++){
+        if(v[j]>max){
+            max = v[j];
+        }
+    }
+    printf("\nEl maximo es: %d\n",max);
+}*/
+/*int minimoVector(int v[], int t){
+    int i,j;
+    for(i=0; i<t; i++){
+        printf("Ingrese un valor para el vector: \n");
+        scanf("%d",&v[i]);
+    }
+    printf("Vector: \n");
+    for(i=0; i<t; i++){
+        printf("Pos[%d] = %d \n",i,v[i]);
+    }
+    int max = v[0];
+    int min = max;
+    for(j=0; j<t; j++){
+        if(v[j]>max){
+            max = v[j];
+        }
+        if(v[j]<min){
+            min = v[j];
+        }
+    }
+    printf("\nEl minimo es: %d\n",min);
+}*/
+int cantidadNumerosRepetidosEnElVector(int v[], int t){
+    int i,j,buscarNum=0,contador=0;
+    for(i=0; i<t; i++){
+        printf("Ingrese un valor para el vector: \n");
+        scanf("%d",&v[i]);
+    }
+    printf("Vector: \n");
+    for(i=0; i<t; i++){
+        printf("Pos[%d] = %d \n",i,v[i]);
+    }
+    printf("Que numero desea buscar? \n");
+    scanf("%d",&buscarNum);
+    for(i=0; i<t; i++){
+        if(v[i]==buscarNum){
+            contador++;
+        }
+    }
+    printf("El numero %d aparece %d veces. \n",buscarNum,contador);
+}
+void menuMezcladoDos(){
+    //0 = Falso //1 = Verdadero
+    int anio,bisiesto;
+    printf("Verifica si el anio es bisiesto o no.\n");
+	printf("Ingrese anio:\n");
+	scanf("%d",&anio);
+	bisiesto = esBisiesto(anio);
+	printf("%d\n",bisiesto);
+	printf("\n-----------------------\n");
+	printf("Verifica si los nombres son iguales o no.\n");
+	char nombre1[20];
+	char nombre2[20];
+	int iguales;
+	printf("Ingrese nombre1:\n");
+    fflush(stdin);
+    scanf("%s",&nombre1);
+    printf("Ingrese nombre2:\n");
+    fflush(stdin);
+    scanf("%s",&nombre2);
+    iguales = sonIguales(nombre1,nombre2);
+    printf("%d\n",iguales);
+    printf("\n-----------------------\n");
+    printf("Verifica si es mayor de edad o no.\n");
+    int anioNacimiento,anioHoy,mayorEdad;
+    printf("Ingrese anio de nacimiento:\n");
+    scanf("%d",&anioNacimiento);
+    printf("Ingrese anio actual:\n");
+    scanf("%d",&anioHoy);
+    mayorEdad = esMayorDeEdad(anioNacimiento,anioHoy);
+    printf("%d\n",mayorEdad);
+    printf("\n-----------------------\n");
+    printf("Verifica si la palabra/frase es palindroma o no.\n");
+    char oracion[100];
+    printf("introducir una frase: \n"); //No pude con una frase pero si con una palabra(o poner toda la frase junta si me deja)
+    fflush(stdin);
+    gets(oracion);
+    if(esPalindromo (oracion)){
+        printf("Dicha frase es palindroma.\n");
+        printf("1\n");
+    }else{
+        printf("Dicha frase no es palindroma.\n");
+        printf("0\n");
+        getchar();
+    }
+}
+int esBisiesto(int anio){
+    if(anio % 4 == 0){
+        if(anio % 100 == 0){
+            if(anio % 400 == 0){
+				printf("El anio %d es bisiesto.\n",anio);
+				anio = 1;
+			}else{
+				printf("El anio %d no es bisiesto.\n",anio);
+				anio = 0;
+			}
+		}else{
+			printf("El anio %d es bisiesto.\n",anio);
+			anio = 1;
+		}
+    }else{
+		printf("El anio %d no es bisiesto.\n",anio);
+		anio = 0;
+    }
+    return anio;
+}
+int sonIguales(char nombre1[20], char nombre2[20]){
+    int igual = strcmp(nombre1,nombre2);
+    if(igual == 0){
+        printf("Los nombres son iguales.\n");
+        igual = 1;
+    }else{
+        printf("Los nombres no son iguales.\n");
+        igual = 0;
+    }
+    return igual;
+}
+int esMayorDeEdad(int anioNacimiento, int anioHoy){
+    int edad = anioHoy - anioNacimiento;
+    if(edad>=18){
+        printf("Es mayor.\n");
+        edad = 1;
+    }else{
+        printf("No es mayor.\n");
+        edad = 0;
+    }
+    return edad;
+}
+int esPalindromo(char oracion[100]){
+    int longitud = strlen(oracion);
+    int i = 0;
+    while(i<=longitud/2 && oracion[i]==oracion[longitud-1-i]){
+        i++;
+    }
+    if(i>longitud/2){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+void menuCompletoVector(){
+    int tamanio = 5;
+    int vector[tamanio];
+    int maximo,minimo,promedio,posMin,posMax;
+
+    cargarVector(vector, tamanio);
+    mostrarVector(vector, tamanio);
+    maximo = maximoVector(vector, tamanio);
+    minimo = minimoVector(vector, tamanio);
+    promedio = promedioVector(vector, tamanio);
+    posMin = posicionMenor(vector, tamanio);
+    posMax = posicionMayor(vector, tamanio);
+
+    printf("\nEl minimo es: %d\n",minimo);
+    printf("\nEl maximo es: %d\n",maximo);
+    printf("\nEl promedio del vector es: %d\n",promedio);
+    printf("\nLa posicion del minimo es: %d\n",posMin);
+    printf("\nLa posicion del maximo es: %d\n",posMax);
+}
+int numeroAleatorio(){
+    int numero = rand() % 50;
+    return numero;
+}
+int maximoVector(int v[], int t){
+    int i,j;
+    int max = v[0];
+    for(j=0; j<t; j++){
+        if(v[j]>max){
+            max = v[j];
+        }
+    }
+    return max;
+}
+int minimoVector(int v[], int t){
+    int i,j;
+    int max = v[0];
+    int min = max;
+    for(j=0; j<t; j++){
+        if(v[j]>max){
+            max = v[j];
+        }
+        if(v[j]<min){
+            min = v[j];
+        }
+    }
+    return min;
+}
+int promedioVector(int v[], int t){
+    int i,suma=0,prom=0;
+    for(i=0; i<t; i++){
+        suma = suma + v[i];
+    }
+    prom = suma / t;
+    return prom;
+}
+int posicionMenor(int v[], int t){
+    int i,j,cont2=0,posMe=0;
+    int max = v[0];
+    int min = max;
+    for(j=0; j<t; j++){
+        cont2 = cont2 + 1;
+        if(v[j]>max){
+            max = v[j];
+        }
+        if(v[j]<min){
+            min = v[j];
+            posMe = cont2 - 1;
+        }
+    }
+    return posMe;
+}
+int posicionMayor(int v[], int t){
+    int i,j,cont=0,posMa=0;
+    int max = v[0];
+    for(j=0; j<t; j++){
+        cont=cont+1;
+        if(v[j]>max){
+            max = v[j];
+            posMa = cont - 1;
+        }
+    }
+    return posMa;
+}
+void ordenamientoBurbuja(int v[], int t){
+    int i,j,aux;
+    for(i=0; i<t; i++){
+        for(j=0; j<t; j++){
+            if(v[j]>=v[j+1]){
+                aux = v[j];
+                v[j] = v[j+1];
+                v[j+1] = aux;
+            }
+        }
+    }
+}
+void ordenamientoSeleccion(int v[], int t){
+    int x,y,min,tmp;
+    for(x=0; x<t; x++){
+        min = x;
+        for(y=x+1; y<t; y++){
+            if(v[min]>v[y]){
+                min = y;
+            }
+        }
+        tmp = v[min];
+        v[min] = v[x];
+        v[x] = tmp;
+    }
+}
+void ordenamientoInsercion(int v[], int t){
+    int x,y,m,tmp,izq,der;
+    for(x=1; x<t; x++){
+        tmp = v[x];
+        izq = 0;
+        der = x - 1;
+        while(izq <= der){
+            m = (izq + der) / 2;
+            if(tmp < v[m]){
+                der = m - 1;
+            }else{
+                izq = m + 1;
+            }
+        }
+        y = x - 1;
+        while(y >= izq){
+            v[y+1] = v[y];
+            y = y - 1;
+        }
+        v[izq] = tmp;
+    }
+}
+void ordenarMayorAmenor(int v[], int t){
+   int i,j,aux;
+    for(i=0; i<t; i++){
+        for(j=i+1; j<t; j++){
+            if(v[i] < v[j]){
+                aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }
+        }
+    }
+}
+void ordenarMenorAmayor(int v[], int t){
+   int i,j,aux;
+    for(i=0; i<t; i++){
+        for(j=0; j<t; j++){
+            if(v[j]>=v[j+1]){
+                aux = v[j];
+                v[j] = v[j+1];
+                v[j+1] = aux;
+            }
+        }
+    }
+}
+float busquedaSecuencial( float v[], int t, float busco){
+    int contador=0;
+    int encontrado=0;
+    int posEncontrado= -1;
+
+    while (contador<t && encontrado==0){
+        if (v[contador]==busco){
+            encontrado=1;
+            posEncontrado=contador;
+        }
+        contador ++;
+   }
+   return posEncontrado;
+}
+float numeroAleatorioEntre(int min, int max){
+    return (float) min + rand()%(max-min+1);
+}
+void cargarVectorAleatoriamente(float v[],int t,int min,int max){
+    int i;
+    for(i=0; i<t; i++){
+        v[i] = (float) numeroAleatorioEntre(min,max);
+    }
+}
+void cargarVectorManualmente(float v[],int t){
+    int i;
+    for(i=0; i<t; i++){
+        printf("Ingrese valor en la posicion [%d]: ",i);
+        scanf("%f", &v[i]);
+    }
 }
