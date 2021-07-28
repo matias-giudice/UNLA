@@ -1,3 +1,0 @@
-UNIDAD 1 - Con Funciones
-1-Menu con las opercaiones basicas de una calculadora(suma,resta,multi y div).
-2-Ingreso de datos de una persona y despues mostrarlos.

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1624413203 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1627433844 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\1erparcial\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<stdbool.h>
+
