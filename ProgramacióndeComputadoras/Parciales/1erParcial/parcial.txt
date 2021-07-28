@@ -1,4 +1,0 @@
-//PRE: c debe ser mayor a cero, es la cantidad de oraciones que tenemos, las horaciones tiene LARGO_ORCACION caracteres
-//busco es la oracion que estoy buscando, tiene tama�o LARGO_ORACION
-//POST: se devuelve la posiccion de la oracion, o menos 1 en caso de no encontrarse.
-int buscarOracion(char oraciones[][LARGO_ORACION], int c, char busco[]);
