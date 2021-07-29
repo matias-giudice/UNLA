@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1627594267 source:c:\users\pc\desktop\resolucion del primer parcial\resolucionparcialtema1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
