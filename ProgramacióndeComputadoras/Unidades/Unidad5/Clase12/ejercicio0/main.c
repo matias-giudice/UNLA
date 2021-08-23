@@ -35,23 +35,12 @@ int main(){
     strcpy(vehiculos[4].patente, "AR988sd");
     vehiculos[4].precio = 323.12;
 
-    for(i=0; i<3; i++){
+    for(i=0; i<5; i++){
         printf("\n\n----DATOS GUARDADOS DEL %d VEHICULO----\n", i);
         printf("\nPatente del vehiculo: %s", vehiculos[i].patente);
         printf("\nAnio del vehiculo: %d", vehiculos[i].anio);
         printf("\nColor del vehiculo: %s", vehiculos[i].color);
         printf("\nPrecio del vehiculo: %.2f", vehiculos[i].precio);
     }
-    printf("\n\n----DATOS GUARDADOS DEL 3 VEHICULO----\n");
-    printf("\nPatente del vehiculo: %s", vehiculos[3].patente);
-    printf("\nAnio del vehiculo: %d", vehiculos[3].anio);
-    printf("\nColor del vehiculo: %s", vehiculos[3].color);
-    printf("\nPrecio del vehiculo: %.2f", vehiculos[3].precio);
-
-    printf("\n\n----DATOS GUARDADOS DEL 4 VEHICULO----\n");
-    printf("\nPatente del vehiculo: %s", vehiculos[4].patente);
-    printf("\nAnio del vehiculo: %d", vehiculos[4].anio);
-    printf("\nColor del vehiculo: %s", vehiculos[4].color);
-    printf("\nPrecio del vehiculo: %.2f", vehiculos[4].precio);
     return 0;
 }
