@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1634609345 source:c:\users\pc\desktop\unla\programacióndecomputadoras\unidades\unidad7\clase16\ejercicio0\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+
+1634609345 c:\users\pc\desktop\unla\programacióndecomputadoras\unidades\unidad7\clase16\ejercicio0\fecha.h
+
+1634609457 source:c:\users\pc\desktop\unla\programacióndecomputadoras\unidades\unidad7\clase16\ejercicio0\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fecha.h"
+
