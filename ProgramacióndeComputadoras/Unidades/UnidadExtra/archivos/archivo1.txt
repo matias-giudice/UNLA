@@ -1,0 +1,4 @@
+Estoy escribiendo un archivo
+Ahora muestro con entero 55
+
+ Basta, ya escribi demasiado

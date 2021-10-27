@@ -1,0 +1,2 @@
+453.12;Naranjas
+123.54;Bananas

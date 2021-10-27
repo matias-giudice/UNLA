@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635298091 source:c:\users\pc\desktop\unla\programacióndecomputadoras\unidades\unidadextra\ejercicio2\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
