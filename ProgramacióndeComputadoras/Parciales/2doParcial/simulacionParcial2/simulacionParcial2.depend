@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1635714331 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1635714331 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\arboles.h
+
+1635714331 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\bosque.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"bosque.h"
+	"arboles.h"
+
+1635714331 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\bosque.h
+	"arboles.h"
+
+1635649681 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arboles.h"
+	"bosque.h"
+
+1635648244 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\menu.h
+	"arboles.h"
+
+1635648282 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\simulacionparcial2\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"arboles.h"
+	"bosque.h"
+
