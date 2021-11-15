@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1636924307 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"estudiante.h"
+	"materia.h"
+
+1636929392 c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema1\estudiante.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"materia.h"
+
+1636925031 c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema1\materia.h
+
+1636930249 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema1\materia.c
+	"materia.h"
+
+1636932377 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema1\estudiante.c
+	"estudiante.h"
+

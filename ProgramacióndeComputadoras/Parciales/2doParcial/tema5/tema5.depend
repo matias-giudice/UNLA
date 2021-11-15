@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1636842947 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\tema5\banda.c
+	"banda.h"
+
+1636843143 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\tema5\banda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lider.h"
+
+1636842735 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\tema5\lider.h
+	"banda.h"
+
+1636842586 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\tema5\lider.c
+	"lider.h"
+
+1636767914 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\tema5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"banda.h"
+	"lider.h"
+

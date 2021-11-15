@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1636935803 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema2\carrera.c
+	"carrera.h"
+
+1636935824 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"carrera.h"
+	"materia.h"
+
+1636942628 c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema2\carrera.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"materia.h"
+
+1636934987 c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema2\materia.h
+
+1636935007 source:c:\users\pc\desktop\unla\programacióndecomputadoras\finales\tema2\materia.c
+	"materia.h"
+
