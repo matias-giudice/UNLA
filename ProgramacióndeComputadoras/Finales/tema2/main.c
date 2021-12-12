@@ -3,7 +3,7 @@
 #include "carrera.h"
 #include "materia.h"
 int main(){
-    printf("ESTUDIANTE: MATIAS DAMIAN GIUDICE ---- DNI: 43.626.738 \n\n");
+    printf("xxxxxxxxxxx DNI: xx.xxx.xxx\n\n");
     printf("\n\nEJERCICIO 1 - Crear y agregar materias a carrera");
     ///                     CARGA  TITULAR INSCRIPTOS
     Materia m1 = crearMateria(8, "Nico Perez", 80);

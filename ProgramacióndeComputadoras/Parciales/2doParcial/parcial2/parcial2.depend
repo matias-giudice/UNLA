@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1635768770 source:c:\users\pc\desktop\43.626.738\parcial2\jugador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"jugador.h"
+
+1635767490 c:\users\pc\desktop\43.626.738\parcial2\jugador.h
+
+1635768983 source:c:\users\pc\desktop\43.626.738\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"jugador.h"
+
+1635768770 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\43.626.738\parcial2\jugador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"jugador.h"
+
+1635767490 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\43.626.738\parcial2\jugador.h
+

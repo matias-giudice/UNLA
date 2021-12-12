@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1636991558 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\recuperatorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+	"nacimiento.h"
+
+1636991970 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\recuperatorio\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"nacimiento.h"
+
+1636976913 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\recuperatorio\nacimiento.h
+	"persona.h"
+
+1636977257 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\recuperatorio\nacimiento.c
+	"nacimiento.h"
+
+1636991970 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\recuperatorio\persona.c
+	"persona.h"
+

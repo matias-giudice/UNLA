@@ -1,0 +1,319 @@
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;------------------------------------------------------------
+                      00002 ; Proyecto: Ejercicio 1 - PUNTO E
+                      00003 ; Autor: Matías Damian Giudice
+                      00004 ; PIC: 16F628A
+                      00005 ; Velocidad de reloj: Int 4 Mhz
+                      00006 ; Descripción: Se encenderán los leds de RB0 hasta el de RB3 y se apagarán todos los leds desde el RB3 a
+                            l RB0, ambos con la misma demora, 
+                      00007 ;              realizando todo el ciclo indefinidamente.
+                      00008 ;------------------------------------------------------------
+                      00009 #INCLUDE <P16F628A.INC>                                         ;Incluimos el PIC
+                      00001         LIST
+                      00002 ; P16F628A.INC  Standard Header File, Version 1.10    Microchip Technology, Inc.
+                      00265         LIST
+                      00266 
+                      00010         ORG 0                                                                   ;Aca comienza el program
+                            a, se ejecuta
+                      00011 ;---DEFINIMOS COSTANTES--------------------------------------
+  00000020            00012 CONT3 EQU 0x20                                                          ;Posicion de memoria
+  00000021            00013 CONT2 EQU 0x21                                                          ;Posicion de memoria
+  00000022            00014 CONT1 EQU 0x22                                                          ;Posicion de memoria
+                      00015 ;------------------------------------------------------------
+0000   1683           00016         BSF STATUS,RP0                                                  ;Moverse al banco 1
+0001   3000           00017         MOVLW B'00000000'                                               ;Configura el puerto B como sali
+                            da
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0086           00018         MOVWF TRISB
+                      00019 
+0003   1283           00020         BCF STATUS,RP0                                                  ;Vuelve al banco 0
+                      00021 ;---INICIO DEL PROGRAMA--------------------------------------
+0004                  00022 inicio                                                                          ;Inicio del programa
+0004   3000           00023         MOVLW B'00000000'                                               ;Pongo los puertos en 0, lo move
+                            mos a w
+0005   0086           00024         MOVWF PORTB                                                             ;Lo que se guardo en w l
+                            o pasamos a PORTB
+0006   1406           00025         BSF PORTB,0                                                             ;Por cada PORTB una sali
+                            da individualmente la vamos prendiendo
+0007   2???           00026         CALL demora_500ms                                               ;Con una demora de 500ms y luego
+                             en ese orden la vamos apagando
+0008   1486           00027         BSF PORTB,1
+0009   2???           00028         CALL demora_500ms
+000A   1506           00029         BSF PORTB,2
+000B   2???           00030         CALL demora_500ms
+000C   1586           00031         BSF PORTB,3
+000D   2???           00032         CALL demora_500ms
+000E   1186           00033         BCF PORTB,3
+000F   2???           00034         CALL demora_500ms
+0010   1106           00035         BCF PORTB,2
+0011   2???           00036         CALL demora_500ms
+0012   1086           00037         BCF PORTB,1
+0013   2???           00038         CALL demora_500ms
+0014   1006           00039         BCF PORTB,0
+0015   2???           00040         CALL demora_500ms
+0016   2???           00041         GOTO inicio                                                             ;Cuando termina toda la 
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                            secuencia vuelve arriba, de esta forma quedaria un ciclo infinito
+                      00042 ;------------------------------------------------------------
+0017                  00043 demora_500ms
+0017   3002           00044         movlw   .2                                                              ;Movemos a w el 2 en dec
+                            imal
+0018   00A0           00045         movwf   CONT3                                                   ;Lo pasamos al contador (CONT3)
+                      00046 
+0019   2???           00047 bucle_1 CALL    demora_250ms                            ;Al entrar al bucle_1, llamamos a demora_250ms p
+                            orque necesitamos un retardo de 250 y 1 microsegundo
+001A   0BA0           00048         decfsz  CONT3,f                                                 ;Luego decrementamos 2 veces al 
+                            contador (CONT3) con un 1 por cada ciclo, si llega a 0 se saltea el
+                      00049                                                                                         ;goto y va al re
+                            turn
+001B   2???           00050         goto    bucle_1                                                 ;Mientras no llegue a 0, se vuel
+                            ve a repetir el bucle_1
+001C   0008           00051         return                                                                  ;Cuando llega a 0, devul
+                            ve el return
+                      00052 
+001D                  00053 demora_250ms
+001D   30FA           00054         movlw   .250                                                    ;Movemos a w el 250 en decimal
+001E   00A1           00055         movwf   CONT2                                                   ;Lo pasamos al contador (CONT2) 
+                      00056 
+001F   2???           00057 bucle_2 CALL    demora_1ms                                      ;Al entrar al bucle_2, llamamos a demora
+                            _1ms porque necesitamos un retardo de 1 milisegundo
+0020   0BA1           00058         decfsz  CONT2,f                                                 ;Le vamos decrementando al conta
+                            dor (CONT2) un 1 por cada ciclo, si llega a 0 se saltea el goto y va
+                      00059                                                                                         ;al return
+0021   2???           00060         goto    bucle_2                                                 ;Mientras no llegue a 0, se vuel
+                            ve a repetir el bucle_2 
+0022   0008           00061         return                                                                  ;Cuando llega a 0, devul
+                            ve el return
+                      00062 ;------------------------------------------------------------
+                      00063 ;Consegimos 4 microsegundos
+                      00064 ;Si esos 4 microsegundos lo multiplicamos por 250 nos da 1000 microsegundos que es 1 milisegundo
+                      00065 ;------------------------------------------------------------
+0023                  00066 demora_1ms
+0023   30FA           00067         movlw   .250                                                    ;Movemos a w el 250 en decimal
+0024   00A2           00068         movwf   CONT1                                                   ;Lo pasamos al contador (CONT1) 
+                      00069 
+0025   0000           00070 bucle_3 nop                                                                     ;NOP es como si fuera un
+                            a linea vacia(salta a la otra linea)
+0026   0BA2           00071         decfsz  CONT1,f                                                 ;Le vamos decrementando al conta
+                            dor (CONT1) un 1 por cada ciclo, si llega a 0 se saltea el goto y va
+                      00072                                                                                         ;al return
+0027   2???           00073         goto    bucle_3                                                 ;Mientras no llegue a 0, se vuel
+                            ve a repetir el bucle_3
+0028   0008           00074         return                                                                  ;Cuando llega a 0, devul
+                            ve el return
+                      00075         
+                      00076         END                                                                             ;Fin del program
+                            a
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADEN                              00000003
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000001F
+CMIE                              00000006
+CMIF                              00000006
+CONT1                             00000022
+CONT2                             00000021
+CONT3                             00000020
+CREN                              00000004
+CSRC                              00000007
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_BO                            00000000
+NOT_BOD                           00000000
+NOT_BOR                           00000000
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+OERR                              00000001
+OPTION_REG                        00000081
+OSCF                              00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PORTA                             00000005
+PORTB                             00000006
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RBIE                              00000003
+RBIF                              00000000
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+RX9                               00000006
+RX9D                              00000000
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1OSCEN                           00000003
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRMT                              00000001
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             0000009F
+VREN                              00000007
+VROE                              00000006
+VRR                               00000005
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DATA_CP_OFF                      00003FFF
+_DATA_CP_ON                       00003EFF
+_ER_OSC_CLKOUT                    00003FFF
+_ER_OSC_NOCLKOUT                  00003FFE
+_EXTCLK_OSC                       00003FEF
+_HS_OSC                           00003FEE
+_INTOSC_OSC_CLKOUT                00003FFD
+_INTOSC_OSC_NOCLKOUT              00003FFC
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FEC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+MPASM  5.31                    EJERCICIO1.ASM   11-16-2021  23:49:21         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_RC_OSC_CLKOUT                    00003FFF
+_RC_OSC_NOCLKOUT                  00003FFE
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FED
+__16F628A                         00000001
+__DEBUG                           1
+bucle_1                           00000019
+bucle_2                           0000001F
+bucle_3                           00000025
+demora_1ms                        00000023
+demora_250ms                      0000001D
+demora_500ms                      00000017
+inicio                            00000004
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1635735258 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\practica_arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"arboles.h"
+
+1635738483 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\practica_arboles\arboles.h
+
+1635738824 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\practica_arboles\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1635738824 source:c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\practica\practica_arboles\arboles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arboles.h"
+
+1635738483 c:\users\pc\desktop\unla\programacióndecomputadoras\parciales\2doparcial\practica\practica_arboles\arboles.h
+

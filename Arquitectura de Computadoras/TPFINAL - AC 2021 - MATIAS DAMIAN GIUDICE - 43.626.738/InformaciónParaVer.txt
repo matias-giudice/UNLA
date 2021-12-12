@@ -1,0 +1,10 @@
+Hola profes! Les comento un poco como esta organizado el proyecto:
+
+1-En la carpeta "Ejercicios", están los códigos fuente de cada ejercicio.
+
+2-También está el pdf con el código de assembler comentado, capturas de pantalla de la simulación del 
+Proteus funcionando y cada ejercicio tiene su descripción.
+
+
+Matias Damian Giudice
+43.626.738

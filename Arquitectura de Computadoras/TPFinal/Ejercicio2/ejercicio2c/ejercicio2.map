@@ -1,0 +1,44 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Mon Nov 15 14:04:56 2021
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000048
+                   .cinit    romdata   0x000024    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000025      
+            38 out of 2183 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000000    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                  WT_OFF1   0x00000f    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   WT_ON1   0x000007    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                delay_1ms   0x00001e    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                 delay_ms   0x000018    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   loop_2   0x00001a    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   loop_3   0x000020    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000000    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   WT_ON1   0x000007    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                  WT_OFF1   0x00000f    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                 delay_ms   0x000018    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   loop_2   0x00001a    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                delay_1ms   0x00001e    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+                   loop_3   0x000020    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio2\ejercicio2c\ejercicio2.asm
+
+

@@ -1,0 +1,44 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Tue Nov 16 20:24:29 2021
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000052
+                   .cinit    romdata   0x000029    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002a      
+            43 out of 2183 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  bucle_1   0x000019    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                  bucle_2   0x00001f    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                  bucle_3   0x000025    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+               demora_1ms   0x000023    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+             demora_250ms   0x00001d    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+             demora_500ms   0x000017    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                   inicio   0x000004    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000004    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+             demora_500ms   0x000017    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                  bucle_1   0x000019    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+             demora_250ms   0x00001d    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                  bucle_2   0x00001f    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+               demora_1ms   0x000023    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+                  bucle_3   0x000025    program     static C:\Users\pc\Desktop\UNLA\Arquitectura de Computadoras\TPFinal\Ejercicio1\ejercicio1e\ejercicio1.asm
+
+

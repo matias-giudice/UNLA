@@ -6,7 +6,7 @@ void cargarVector(int v[],int t,int min,int max);
 void arrayDerechaAizquieda(int v[],int t);
 void arrayIzquierdaAderecha(int v[],int t);
 int main(){
-    printf("Matias Damian Giudice DNI: 43.626.738\n\n");
+    printf("xxxxxxxxxxx DNI: xx.xxx.xxx\n\n");
     menu();
     return 0;
 }
