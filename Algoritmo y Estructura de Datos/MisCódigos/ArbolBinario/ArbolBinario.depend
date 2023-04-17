@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1655013741 source:c:\users\alumno\desktop\ayed\miscódigos\arbolbinario\arbol.cpp
+	<iostream>
+	<stdio.h>
+	"arbol.h"
+
+1655013697 c:\users\alumno\desktop\ayed\miscódigos\arbolbinario\arbol.h
+
+1655013936 source:c:\users\alumno\desktop\ayed\miscódigos\arbolbinario\main.cpp
+	<iostream>
+	<stdio.h>
+	"arbol.h"
+

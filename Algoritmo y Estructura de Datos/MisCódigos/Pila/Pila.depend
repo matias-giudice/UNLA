@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1654999272 source:c:\users\alumno\desktop\ayed\miscódigos\pila\main.cpp
+	<iostream>
+	<stdio.h>
+	"pila.h"
+
+1654919989 c:\users\alumno\desktop\ayed\miscódigos\pila\pila.h
+
+1654920873 source:c:\users\alumno\desktop\ayed\miscódigos\pila\pila.cpp
+	<iostream>
+	<stdio.h>
+	"pila.h"
+

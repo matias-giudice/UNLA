@@ -1,0 +1,38 @@
+http://ftp.campusvirtual.utn.ac.cr/objetos%20de%20aprendizaje%20profesores/plataformastecnologicas/sistema_operativo.html
+
+Estimado Matias: Te compartimos la corrección del parcial: 
+
+1) + traerEstacion(String nombre) : Estacion BIEN 
+
+2) + agregarEstacion(String nombre, String direccion, float latitud, float longitud, float altura) : boolean 
+Modelo: Incorrecto. 
+Se compara el nombre ingresado como parámetro con la lista de estaciones. 
+Eso no funciona. 
+Se debia reutilizar el CU1 para ver si la estación existe. 
+Test: No devuelve el resultado esperado. Al agregar una estacion que ya existe se esperaba que se lanzara una excepción. 
+
+3) + agregarMedicion(Estacion estacion, LocalDate fecha, LocalTime hora, float temperatura, float humedad, float vientoVel, float vientoDir, float precipitacion) : boolean 
+Modelo: Se entrega el método comentado 
+Test: Se entrega el test comentado 
+
+4) + traerMedicion(Estacion estacion, LocalDate fecha, LocalTime hora) : Medicion 
+Modelo: Se entrega el método comentado 
+Test: No implementado 
+
+5) + traerMediciones (Estacion estacion) : Medicion 
+Modelo: Se entrega el método comentado 
+Test: Se entrega el test comentado 
+
+6) + promedioTemperatura(Estacion estacion, LocalDate fecha, LocalTime horaDesde, LocalTime horaHasta) : float 
+No implementado 
+
+7) + temperaturaCorregidaPorAltura() : float 
+Modelo: Bien 
+Test: No implementado 
+
+8) + distanciaConEstacion(Estacion estacion) : double 
+Modelo: Implementado en la clase incorrecta. 
+Se debia implementar dentro de Estacion. 
+Test: No implementado 
+
+Nota: 2 (dos) Cátedra de OO, Saludos

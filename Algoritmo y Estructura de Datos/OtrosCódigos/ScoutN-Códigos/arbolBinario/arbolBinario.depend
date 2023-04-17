@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1652365937 source:e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividad recomendada en clase\05-10arbol-binario\arbolbinario\arbol.cpp
+	<iostream>
+	"arbol.h"
+
+1652365378 e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividad recomendada en clase\05-10arbol-binario\arbolbinario\arbol.h
+
+1653958497 source:e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividad recomendada en clase\05-10arbol-binario\arbolbinario\main.cpp
+	<iostream>
+	"arbol.h"
+
+1652365937 source:c:\users\alumno\desktop\ayed\naceli-códigos\arbolbinario\arbol.cpp
+	<iostream>
+	"arbol.h"
+
+1652365378 c:\users\alumno\desktop\ayed\naceli-códigos\arbolbinario\arbol.h
+
+1653958497 source:c:\users\alumno\desktop\ayed\naceli-códigos\arbolbinario\main.cpp
+	<iostream>
+	"arbol.h"
+

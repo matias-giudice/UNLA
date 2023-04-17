@@ -1,0 +1,42 @@
+Estimado Matias Te compartimos la corrección del parcial: 
+Casos de uso: 
+1) + traerCliente(String codCliente) : Cliente Bien 
+
+2) + esValidoCodCliente(String codCliente) : boolean 
+El código de cliente debe tener 10 dígitos, el primer dígito es una letra que puede ser “S” o “N”, los 9 caracteres 
+siguientes deben ser números y el último dígito debe ser PAR si la primera letra es S e IMPAR si la primera letra es N. 
+Ejemplos de códigos correctos: S000000012, N000000035 No resuelto 
+
+3) + agregarCliente(String codCliente, String nombre, String apellido, int dni, LocalDate fechaNacimiento) : boolean 
+Lanzar excepción si ya existe un Cliente con el mismo codCliente. 
+El id se calcula de forma autoincremental, teniendo en cuenta que la lista puede tener altas y bajas de objetos. 
+No imprime la lista No resuelve excepción por duplicado y por cod incorrecto 
+
+4) + calcularEdad() : int 
+Devuelve la edad de un cliente comparando con la fecha actual. 
+Nota: usar la fecha de hoy “LocalDate.of(2022.10,20)” en vez de “LocalDate.now()” Incompleto, 
+no contempla que la 20/10 puede no haber cumplido los años 
+
+5) + agregarAbonoMensual(Cliente cliente, String nombre, int nroLinea, int diaFacturacion, boolean flota) : boolean 
+Lanzar excepción si el cliente tiene menos de 18 años. 
+Esta validación solo aplica para este método. 
+El id se calcula de forma autoincremental, teniendo en cuenta que la lista puede tener altas y bajas de objetos. 
+No imprime la lista 
+
+6) + agregarPrePago(Cliente cliente, String nombre, int nroLinea, LocalDate fechaUltimaRecarga, int diasDuracion):boolean 
+No implementa excepción. 
+El id se calcula de forma autoincremental, teniendo en cuenta que la lista puede tener altas y bajas de objetos. 
+No imprime la lista 
+
+7) ~ calcularFechaProximoVencimiento() : LocalDate 
+// Implementar como método abstracto. 
+Si es un AbonoMensual, se devuelve el diaFacturacion del mes y año en curso si éste todavía no llegó. 
+En caso de que ya haya pasado, devolver el diaFacturacion del mes próximo. 
+Nota: usar la fecha de hoy “LocalDate.of(2022.10,20)” en vez de “LocalDate.now()”. 
+Si es un PrePago, se devuelve la fechaUltimaRecarga más los diasDuracion. Mal 
+
+8) + traerPlanesPorVencimiento(LocalDate desde, LocalDate hasta) : List 
+Devuelve todos los planes que tengan próxima fecha de vencimiento entre las fechas pasadas como parámetro 
+(incluyendo extremos), y que, en caso de ser AbonoMensual, no sea un plan de “flota”. No resuelto 
+
+Nota: 2 (dos) Cátedra de OO, Saludos

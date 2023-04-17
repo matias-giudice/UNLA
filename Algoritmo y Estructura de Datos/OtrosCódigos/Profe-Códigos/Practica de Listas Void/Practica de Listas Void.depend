@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1652497017 source:c:\users\pc\desktop\juan\universidad unla\2do anio\1t - a - ayed\codigo\practica\practica de listas, listas void, pilas y colas\practica de listas void\main.cpp
+	<iostream>
+	"listaVoid.h"
+
+1652491692 c:\users\pc\desktop\juan\universidad unla\2do anio\1t - a - ayed\codigo\practica\practica de listas, listas void, pilas y colas\practica de listas void\listavoid.h
+
+1652494383 source:c:\users\pc\desktop\juan\universidad unla\2do anio\1t - a - ayed\codigo\practica\practica de listas, listas void, pilas y colas\practica de listas void\listavoid.cpp
+	<iostream>
+	"listaVoid.h"
+

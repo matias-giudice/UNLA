@@ -1,0 +1,46 @@
+Estimado Matias: 
+Te compartimos la corrección del parcial: 
+Casos de uso: 
+
+1) + traerVehiculo(String dominio) : Vehiculo Devuelve el Vehiculo con el dominio pasado como parámetro o NULL 
+si no existe. Bien. Pero no se reutiliza. 
+
+2) + esValidoDominio(String dominio) : boolean El dominio puede tener 2 letras, 3 números y otras 2 letras, 
+Ejemplo AB123CD, o también puede tener 3 letras y 3 numeros, Ejemplo ABC123 Regular. Los métodos deben tener un
+único retorno. Se debería guardar los resultados parciales en alguna variable booleana y después devolver al 
+final esa variable. La excepción se debería disparar solo en el setDominio cuando la validación devuelve false.
+No se valida el tamaño del dominio. Si se ingresara ABC123AAA lo toma como válido. 
+
+3) + agregarAuto(String marca, String modelo, String dominio, boolean tieneGNC) : boolean Lanzar excepción si 
+ya existe un Vehículo con el mismo dominio o si el dominio es inválido. El id se calcula de forma 
+autoincremental, teniendo en cuenta que la lista puede tener altas y bajas de objetos. Incorrecto. Se debia 
+reutilizar el CU1 para verificar si existe un vehículo con el mismo dominio. 
+
+4) +agregarCamioneta(String marca, String modelo, String dominio, float largo, float ancho, float alto):boolean 
+Lanzar excepción si ya existe un Vehículo con el mismo dominio. El id se calcula de forma autoincremental, 
+teniendo en cuenta que la lista puede tener altas y bajas de objetos. Incorrecto. Se debia reutilizar el CU1 
+para verificar si existe un vehículo con el mismo dominio. 
+
+5) ~ calcularEspacioMaximo() : float //Implementar como método abstracto Devuelve el espacio máximo del 
+Vehículo. Si es Auto, se calcula un valor de 400lt, aunque si tiene GNC, ese valor se divide a la mitad. Si es
+Camioneta, se calcula el espacio como el área de la caja (largo * ancho * alto) dividido 1000, para obtener los
+litros Bien. 
+
+6) + agregarEnvio(Vehiculo vehiculo, LocalDate fecha, LocalTime hora, String origen, String destino, float 
+espacioRequerido) : boolean Lanzar excepción si el espacioRequerido supera el espacio máximo del Vehículo 
+asignado. El id se calcula de forma autoincremental, teniendo en cuenta que la lista puede tener altas y bajas
+de objetos Incorrecto. No era necesario hacer un While para buscar en la lista. Solo había que tomar el 
+vehículo que entra por parámetro, llamar al método calcularEspacioMaximo() y compararlo con el valor de 
+espacioRequerido que cambien entra por parámetro. Da error en el testeo en un envío que no debería dar error. 
+
+7) + traerEnviosConCamioneta(LocalDate fechaDesde, LocalDate fechaHasta) : List Devuelve todos los Envios que
+tengan asignado un Vehiculo del tipo Camioneta y que se realicen entre las fechas pasadas como parámetro 
+(incluyendo los extremos) Incompleto. No se revisa si el envío tiene asignado un vehículo del tipo Camioneta
+para incluirlo en la lista devuelta. 
+
+8) + traerMinimoVehiculoPorEspacioMaximo(float espacioRequerido) : Vehiculo Devuelve el Vehículo más pequeño 
+que tenga un espacioMaximo igual o mayor al espacioRequerido Incompleto. No se busca el vehículo con espacio
+mínimo que tenga al menos el espacioRequerido, sino que se busca el primer vehículo que tenga el mismo o más 
+espacioRequerido. 
+
+Nota: 2 (dos) Cátedra de OO, Saludos

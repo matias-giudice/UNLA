@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1653679014 source:e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividades de tps\2-listas\4-lista-a-void\lista-a-void\lista-void.cpp
+	<iostream>
+	"lista-void.h"
+
+1653661170 e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividades de tps\2-listas\4-lista-a-void\lista-a-void\lista-void.h
+
+1653679128 source:e:\universidad\2do año\1er semestre\algoritmos y estructuras de datos\actividades de tps\2-listas\4-lista-a-void\lista-a-void\main.cpp
+	<iostream>
+	<time.h>
+	"lista-void.h"
+

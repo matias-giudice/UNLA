@@ -1,0 +1,12 @@
+Lo primero será partir de un número:
+
+int iNumero = 123458;
+
+Lo siguiente que vamos a hacer es convertirlo en una cadena String. Para ello utilizamos el método toString de Integer.
+
+String x = Integer.toString(iNumero);
+
+Ahora que tenemos la cadena, será tan simple como conocer el tamaño de la misma, mediante .length(), 
+lo cual coincidirá con la cantidad de dígitos de un número.
+
+System.out.println(iNumero + " tiene " + x.length() + " dígitos");

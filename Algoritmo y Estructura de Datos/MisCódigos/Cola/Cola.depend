@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1654999334 source:c:\users\alumno\desktop\ayed\miscódigos\cola\main.cpp
+	<iostream>
+	<stdio.h>
+	"cola.h"
+
+1654993868 source:c:\users\alumno\desktop\ayed\miscódigos\cola\cola.cpp
+	<iostream>
+	<stdio.h>
+	"cola.h"
+
+1654993825 c:\users\alumno\desktop\ayed\miscódigos\cola\cola.h
+

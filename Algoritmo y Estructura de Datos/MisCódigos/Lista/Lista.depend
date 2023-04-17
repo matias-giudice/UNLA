@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1655189676 source:c:\users\alumno\desktop\ayed\miscódigos\lista\lista.cpp
+	<iostream>
+	<stdio.h>
+	"lista.h"
+
+1655173786 c:\users\alumno\desktop\ayed\miscódigos\lista\lista.h
+
+1655177722 source:c:\users\alumno\desktop\ayed\miscódigos\lista\main.cpp
+	<iostream>
+	<stdio.h>
+	"lista.h"
+

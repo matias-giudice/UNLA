@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1655011865 source:c:\users\alumno\desktop\ayed\miscódigos\listavoid\listavoid.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<cstring>
+	<time.h>
+	"listaVoid.h"
+
+1655075431 source:c:\users\alumno\desktop\ayed\miscódigos\listavoid\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+	"listaVoid.h"
+
+1655011532 c:\users\alumno\desktop\ayed\miscódigos\listavoid\listavoid.h
+
